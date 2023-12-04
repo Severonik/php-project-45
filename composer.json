@@ -1,0 +1,11 @@
+{
+    "name": "hexlet/code",
+    "description": "Проект Игры Разума",
+    "authors": [
+        {
+            "name": "Severonik (Александр Северов)"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
