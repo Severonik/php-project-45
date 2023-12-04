@@ -7,7 +7,14 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpProject45\\": "src/"
+        }
+    },
     "bin": [
         "bin/brain-games"
       ]
