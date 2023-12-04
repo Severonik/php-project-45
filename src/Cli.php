@@ -7,25 +7,49 @@ use function cli\prompt;
 
 class Cli
 {
-    public static function run()
+    public static function askName()
     {
-        self::welcome();
-        $name = self::askName();
-        self::greetUser($name);
-    }
-
-    private static function welcome()
-    {
-        line('Welcome to the Brain Game!');
-    }
-
-    private static function askName()
-    {
+        line('Welcome to the Brain Games!');
         return prompt('May I have your name?');
     }
 
-    private static function greetUser($name)
+    public static function welcome($name)
     {
-        line("Hello, %s!", $name);
+        line("Hello, $name!");
+    }
+
+    public static function showGameInstructions()
+    {
+        line('Answer "yes" if the number is even, otherwise answer "no".');
+    }
+
+    public static function showQuestion($number)
+    {
+        line("Question: $number");
+    }
+
+    public static function askUserAnswer()
+    {
+        return prompt('Your answer');
+    }
+
+    public static function showCorrectAnswer()
+    {
+        line('Correct!');
+    }
+
+    public static function showWrongAnswer($userAnswer, $correctAnswer)
+    {
+        line("'$userAnswer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
+    }
+
+    public static function showTryAgain($name)
+    {
+        line("Let's try again, $name!");
+    }
+
+    public static function showCongratulations($name)
+    {
+        line("Congratulations, $name!");
     }
 }
