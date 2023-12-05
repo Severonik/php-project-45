@@ -4,9 +4,9 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use PhpProject45\Engine;
-use PhpProject45\Games\EvenGame;
+use PhpProject45\Games\CalcGame;
 
 $engine = new Engine();
-$game = new EvenGame();
+$game = new CalcGame();
 
 $engine->runGame($game);
