@@ -27,6 +27,9 @@ class Cli
             case 'calc':
                 line('What is the result of the expression?');
                 break;
+            case 'gcd':
+                line('What is the result of the expression?');
+                break;
         }
     }
 
