@@ -20,23 +20,14 @@ class Cli
 
     public static function showGameInstructions($gameType = '')
     {
-        if ($gameType === 'even') {
-            self::showInstructionsEven();
-        } elseif ($gameType === 'calc') {
-            self::showInstructionsCalc();
-        } else {
+        switch ($gameType) {
+            case 'even':
+                line('Answer "yes" if the number is even, otherwise answer "no".');
+                break;
+            case 'calc':
+                line('What is the result of the expression?');
+                break;
         }
-
-    }
-
-    public static function showInstructionsEven()
-    {
-        line('Answer "yes" if the number is even, otherwise answer "no".');
-    }
-
-    public static function showInstructionsCalc()
-    {
-        line('What is the result of the expression?');
     }
 
     public static function showQuestion($number)

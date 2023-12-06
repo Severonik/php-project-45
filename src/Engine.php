@@ -11,19 +11,19 @@ class Engine
     {
         $name = Cli::askName();
         Cli::welcome($name);
-        Cli::showGameInstructions();
-
+    
         $correctAnswersCount = 0;
         $maxCorrectAnswers = 3;
-
+    
         while ($correctAnswersCount < $maxCorrectAnswers) {
             $question = $game->generateQuestion();
             $correctAnswer = $game->calculateCorrectAnswer($question);
-
+    
+            Cli::showGameInstructions($game->getType());
             Cli::showQuestion($question);
             $userAnswer = Cli::askUserAnswer();
-
-            if ($userAnswer == $correctAnswer) {
+    
+            if ($userAnswer === $correctAnswer) {
                 Cli::showCorrectAnswer();
                 $correctAnswersCount++;
             } else {
@@ -32,7 +32,7 @@ class Engine
                 return;
             }
         }
-
+    
         Cli::showCongratulations($name);
     }
 }
