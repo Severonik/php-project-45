@@ -9,4 +9,4 @@ use PhpProject45\Games\CalcGame;
 $engine = new Engine();
 $game = new CalcGame();
 
-$engine->runGame($game, 'calc');
+$engine->runGame($game);
