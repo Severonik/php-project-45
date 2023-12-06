@@ -9,4 +9,4 @@ use PhpProject45\Games\EvenGame;
 $engine = new Engine();
 $game = new EvenGame();
 
-$engine->runGame($game, 'even');
+$engine->runGame($game);

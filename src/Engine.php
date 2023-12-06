@@ -23,7 +23,7 @@ class Engine
             Cli::showQuestion($question);
             $userAnswer = Cli::askUserAnswer();
     
-            if ($userAnswer === $correctAnswer) {
+            if ($userAnswer == $correctAnswer) {
                 Cli::showCorrectAnswer();
                 $correctAnswersCount++;
             } else {
