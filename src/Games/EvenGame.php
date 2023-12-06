@@ -6,6 +6,12 @@ use PhpProject45\Game;
 
 class EvenGame implements Game
 {
+
+    public function getType()
+    {
+        return 'even';
+    }
+    
     public function generateQuestion()
     {
         return mt_rand(1, 100);

@@ -6,6 +6,11 @@ use PhpProject45\Game;
 
 class CalcGame implements Game
 {
+    public function getType()
+    {
+        return 'calc';
+    }
+
     public function generateQuestion()
     {
         $number1 = mt_rand(1, 100);
