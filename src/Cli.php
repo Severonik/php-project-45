@@ -18,7 +18,7 @@ class Cli
         line("Hello, $name!");
     }
 
-    public static function showGameInstructions()
+    public static function showGameInstructions($gameType)
     {
         if ($gameType === 'even') {
             self::showInstructionsEven();
