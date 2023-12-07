@@ -4,14 +4,14 @@ namespace PhpProject45\Games;
 
 use PhpProject45\Game;
 
-class ProgGame implements Game
+class ProgressionGame implements Game
 {
     private $progression;
     private $hiddenPosition;
 
     public function getType()
     {
-        return 'prog';
+        return 'progression';
     }
 
     public function generateQuestion()
