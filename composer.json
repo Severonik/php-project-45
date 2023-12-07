@@ -23,6 +23,7 @@
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
-        "brain-progression"
+        "brain-progression",
+        "brain-prime"
     ]
 }

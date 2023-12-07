@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use PhpProject45\Engine;
+use PhpProject45\Games\PrimeGame;
+
+$engine = new Engine();
+$game = new PrimeGame();
+
+$engine->runGame($game);

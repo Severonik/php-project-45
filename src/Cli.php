@@ -33,6 +33,9 @@ class Cli
             case 'prog':
                 line('What number is missing in the progression?');
                 break;
+            case 'prime':
+                line('Answer "yes" if given number is prime. Otherwise answer "no".');
+                break;
         }
     }
 
