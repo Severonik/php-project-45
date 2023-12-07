@@ -39,10 +39,10 @@ class Cli
             case 'gcd':
                 line('Find the greatest common divisor of given numbers.');
                 break;
-            case 'prog':
+            case 'progression':
                 line('What number is missing in the progression?');
                 break;
-            case 'progression':
+            case 'prime':
                 line('Answer "yes" if given number is prime. Otherwise answer "no".');
                 break;
         }
