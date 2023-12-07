@@ -13,7 +13,7 @@ brain-calc:
 brain-gcd:
 	./bin/brain-gcd
 
-brain-prog:
+brain-progression:
 	./bin/brain-progression
 
 brain-prime:
