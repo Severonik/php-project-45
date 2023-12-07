@@ -43,7 +43,7 @@ class Cli {
         }
     }
 
-    public static function showQuestion(int $number) {
+    public static function showQuestion($number) {
         line("Question: $number");
     }
 
