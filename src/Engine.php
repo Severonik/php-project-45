@@ -6,8 +6,8 @@ use function cli\line;
 use function cli\prompt;
 
 class Engine {
-
-    public static function runGame(Game $game) {
+    public static function runGame(Game $game) 
+    {
         $name = Cli::askName();
         Cli::welcome($name);
 
