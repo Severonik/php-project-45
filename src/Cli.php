@@ -5,8 +5,8 @@ namespace PhpProject45;
 use function cli\line;
 use function cli\prompt;
 
-class Cli {
-
+class Cli
+{
     public static function welcomeUser()
     {
         line('Welcome to the Brain Games!');

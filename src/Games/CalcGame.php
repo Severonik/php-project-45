@@ -4,13 +4,15 @@ namespace PhpProject45\Games;
 
 use PhpProject45\Game;
 
-class CalcGame implements Game {
-
-    public function getType() {
+class CalcGame implements Game
+{
+    public function getType()
+    {
         return 'calc';
     }
 
-    public function generateQuestion() {
+    public function generateQuestion()
+    {
         $number1 = mt_rand(1, 100);
         $number2 = mt_rand(1, 100);
         $operation = ['+', '-', '*'][array_rand(['+', '-', '*'])];
@@ -18,7 +20,8 @@ class CalcGame implements Game {
         return "$number1 $operation $number2";
     }
 
-    public function calculateCorrectAnswer($question) {
+    public function calculateCorrectAnswer($question)
+    {
         eval('$result = ' . $question . ';');
         return $result;
     }
