@@ -18,7 +18,7 @@ class ProgressionGame implements Game
     {
         $this->progression = $this->generateProgression();
         $this->hiddenPosition = mt_rand(0, count($this->progression) - 1);
-        
+
         $progressionWithDots = $this->replaceWithDots($this->progression, $this->hiddenPosition);
 
         return implode(' ', $progressionWithDots);

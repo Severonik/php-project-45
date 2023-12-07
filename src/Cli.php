@@ -7,7 +7,6 @@ use function cli\prompt;
 
 class Cli
 {
-
     public static function welcomeUser()
     {
         line('Welcome to the Brain Games!');
@@ -15,7 +14,7 @@ class Cli
         line("Hello, $name!");
         exit(); 
     }
-
+    
     public static function askName()
     {
         line('Welcome to the Brain Games!');
