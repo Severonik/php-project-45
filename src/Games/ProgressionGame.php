@@ -4,8 +4,8 @@ namespace PhpProject45\Games;
 
 use PhpProject45\Game;
 
-class ProgressionGame implements Game
-{
+class ProgressionGame implements Game {
+
     private $progression;
     private $hiddenPosition;
 

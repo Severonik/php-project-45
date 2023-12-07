@@ -4,8 +4,8 @@ namespace PhpProject45\Games;
 
 use PhpProject45\Game;
 
-class GcdGame implements Game
-{
+class GcdGame implements Game {
+
     public function getType()
     {
         return 'gcd';

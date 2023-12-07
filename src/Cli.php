@@ -5,29 +5,25 @@ namespace PhpProject45;
 use function cli\line;
 use function cli\prompt;
 
-class Cli
-{
-    public static function welcomeUser()
-    {
+class Cli {
+
+    public static function welcomeUser() {
         line('Welcome to the Brain Games!');
         $name = prompt('May I have your name?');
         line("Hello, $name!");
         exit();
     }
 
-    public static function askName()
-    {
+    public static function askName() {
         line('Welcome to the Brain Games!');
         return prompt('May I have your name?');
     }
 
-    public static function welcome($name)
-    {
+    public static function welcome(string $name) {
         line("Hello, $name!");
     }
 
-    public static function showGameInstructions($gameType = '')
-    {
+    public static function showGameInstructions(string  $gameType = '') {
         switch ($gameType) {
             case 'even':
                 line('Answer "yes" if the number is even, otherwise answer "no".');
@@ -47,33 +43,27 @@ class Cli
         }
     }
 
-    public static function showQuestion($number)
-    {
+    public static function showQuestion(int $number) {
         line("Question: $number");
     }
 
-    public static function askUserAnswer()
-    {
+    public static function askUserAnswer() {
         return prompt('Your answer');
     }
 
-    public static function showCorrectAnswer()
-    {
+    public static function showCorrectAnswer() {
         line('Correct!');
     }
 
-    public static function showWrongAnswer($userAnswer, $correctAnswer)
-    {
+    public static function showWrongAnswer(string $userAnswer, string  $correctAnswer) {
         line("'$userAnswer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
     }
 
-    public static function showTryAgain($name)
-    {
+    public static function showTryAgain(string  $name) {
         line("Let's try again, $name!");
     }
 
-    public static function showCongratulations($name)
-    {
+    public static function showCongratulations(string  $name) {
         line("Congratulations, $name!");
     }
 }

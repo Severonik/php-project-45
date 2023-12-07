@@ -4,8 +4,8 @@ namespace PhpProject45\Games;
 
 use PhpProject45\Game;
 
-class PrimeGame implements Game
-{
+class PrimeGame implements Game {
+
     public function getType()
     {
         return 'prime';
