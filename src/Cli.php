@@ -7,6 +7,15 @@ use function cli\prompt;
 
 class Cli
 {
+
+    public static function welcomeUser()
+    {
+        line('Welcome to the Brain Games!');
+        $name = prompt('May I have your name?');
+        line("Hello, $name!");
+        exit(); 
+    }
+
     public static function askName()
     {
         line('Welcome to the Brain Games!');
