@@ -10,7 +10,7 @@ class EvenGame implements Game
     {
         return 'even';
     }
-    
+
     public function generateQuestion()
     {
         return mt_rand(1, 100);

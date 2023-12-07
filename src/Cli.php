@@ -12,9 +12,9 @@ class Cli
         line('Welcome to the Brain Games!');
         $name = prompt('May I have your name?');
         line("Hello, $name!");
-        exit(); 
+        exit();
     }
-    
+
     public static function askName()
     {
         line('Welcome to the Brain Games!');

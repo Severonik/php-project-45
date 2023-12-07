@@ -14,7 +14,7 @@ class Engine
 
         $correctAnswersCount = 0;
         $maxCorrectAnswers = 3;
-    
+
         while ($correctAnswersCount < $maxCorrectAnswers) {
             $question = $game->generateQuestion();
             $correctAnswer = $game->calculateCorrectAnswer($question);
