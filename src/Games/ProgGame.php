@@ -11,7 +11,7 @@ class ProgGame implements Game
 
     public function getType()
     {
-        return 'progression';
+        return 'prog';
     }
 
     public function generateQuestion()
