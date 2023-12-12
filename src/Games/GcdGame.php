@@ -1,7 +1,5 @@
 <?php
 
-namespace PhpProject45\Games;
-
 use PhpProject45\Game;
 
 function gcd($a, $b)
