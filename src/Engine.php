@@ -1,17 +1,6 @@
 <?php
 
-namespace PhpProject45\Engine;
-
-use function PhpProject45\Cli\askName;
-use function PhpProject45\Cli\welcome;
-use function PhpProject45\Cli\showGameInstructions;
-use function PhpProject45\Cli\showQuestion;
-use function PhpProject45\Cli\askUserAnswer;
-use function PhpProject45\Cli\showCorrectAnswer;
-use function PhpProject45\Cli\showWrongAnswer;
-use function PhpProject45\Cli\showTryAgain;
-use function PhpProject45\Cli\showCongratulations;
-
+require_once __DIR__ . '/../src/Cli.php';
 use function PhpProject45\Games\generateQuestion;
 use function PhpProject45\Games\calculateCorrectAnswer;
 
