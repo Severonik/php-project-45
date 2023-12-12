@@ -25,23 +25,23 @@ function replaceWithDots($progression, $position)
 
 function progressionGame()
 {
-    $length = mt_rand(5, 10);
-    $hiddenPosition = mt_rand(0, $length - 1); // Добавлено определение $hiddenPosition
+    $length = mt_rand(5, 10); // Установка значения для $length
+    $hiddenPosition = mt_rand(0, $length - 1);
 
     return [
         'type' => 'progression',
-        'generateQuestion' => function () use ($hiddenPosition) { // Использование $hiddenPosition
+        'generateQuestion' => function () use ($length, $hiddenPosition) {
             $progression = generateProgression();
 
             $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
             return [
-                'question' => implode(' ', $progressionWithDots),
+                'question' => $progressionWithDots,
                 'hiddenPosition' => $hiddenPosition,
             ];
         },
         'calculateCorrectAnswer' => function ($questionData) {
-            $progression = explode(' ', $questionData['question']);
+            $progression = $questionData['question'];
             $hiddenNumber = $progression[$questionData['hiddenPosition']];
 
             return $hiddenNumber;
