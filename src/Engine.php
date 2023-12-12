@@ -15,15 +15,15 @@ function runGame($game)
     $maxCorrectAnswers = 3;
 
     while ($correctAnswersCount < $maxCorrectAnswers) {
-        $questionData = generateQuestionFunction($game);
-        $correctAnswer = calculateCorrectAnswerFunction($game, $questionData);
+        $question = generateQuestionFunction($game);
+        $correctAnswer = calculateCorrectAnswerFunction($game, $question);
 
         showGameInstructions(getTypeFunction($game));
-        showQuestion($questionData);
+        showQuestion($question);
         $userAnswer = askUserAnswer();
 
         if ($userAnswer == $correctAnswer) {
-            showCorrectAnswer($correctAnswer);
+            showCorrectAnswer();
             $correctAnswersCount++;
         } else {
             showWrongAnswer($userAnswer, $correctAnswer);

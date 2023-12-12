@@ -45,7 +45,8 @@ function showGameInstructions($gameType = '')
 
 function showQuestion($question)
 {
-    line("Question: {$question['question']}");
+    $questionText = is_array($question) ? implode(' ', $question) : $question;
+    line("Question: {$questionText}");
 }
 
 function askUserAnswer()
@@ -53,9 +54,9 @@ function askUserAnswer()
     return prompt('Your answer');
 }
 
-function showCorrectAnswer($correctAnswer)
+function showCorrectAnswer()
 {
-    line("Correct answer: {$correctAnswer}");
+    line('Correct!');
 }
 
 function showWrongAnswer(string $userAnswer, string $correctAnswer)
