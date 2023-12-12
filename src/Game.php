@@ -1,23 +1,16 @@
 <?php
 
-interface Game
+function getTypeFunction($game)
 {
-    public function getType();
-    public function generateQuestion();
-    public function calculateCorrectAnswer(string $question);
+    return $game['type'];
 }
 
-function getTypeFunction(Game $game)
+function generateQuestionFunction($game)
 {
-    return $game->getType();
+    return $game['generateQuestion']();
 }
 
-function generateQuestionFunction(Game $game)
+function calculateCorrectAnswerFunction($game, $question)
 {
-    return $game->generateQuestion();
-}
-
-function calculateCorrectAnswerFunction(Game $game, string $question)
-{
-    return $game->calculateCorrectAnswer($question);
+    return $game['calculateCorrectAnswer']($question);
 }

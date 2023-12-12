@@ -6,7 +6,7 @@ require_once __DIR__ . '/../src/Game.php';
 use function cli\line;
 use function cli\prompt;
 
-function runGame(callable $game)
+function runGame($game)
 {
     $name = askName();
     welcome($name);
