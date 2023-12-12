@@ -16,6 +16,14 @@ function generateProgression()
     return $progression;
 }
 
+function replaceWithDots($progression, $position)
+    {
+        $progressionWithDots = $progression;
+        $progressionWithDots[$position] = '..';
+
+        return $progressionWithDots;
+    }
+
 function progressionGame()
 {
     return [
