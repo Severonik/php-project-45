@@ -25,6 +25,7 @@ function replaceWithDots($progression, $position)
 
 function progressionGame()
 {
+    $length = mt_rand(5, 10);
     $hiddenPosition = mt_rand(0, $length - 1); // Добавлено определение $hiddenPosition
 
     return [
