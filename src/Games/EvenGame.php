@@ -9,6 +9,7 @@ function evenGame()
             return "Question: $question";
         },
         'calculateCorrectAnswer' => function ($question) {
+            $question = (int)$question;
             return $question % 2 === 0 ? 'yes' : 'no';
         }
     ];
