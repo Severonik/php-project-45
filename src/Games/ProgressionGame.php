@@ -26,6 +26,7 @@ function replaceWithDots($progression, $position)
 
 function progressionGame()
 {
+    global $hiddenPosition;
     return [
         'type' => 'progression',
         'generateQuestion' => function () {
