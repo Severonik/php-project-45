@@ -2,8 +2,6 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-
-use function PhpProject45\Engine\runGame;
-use function PhpProject45\Games\primeGame;
+require_once __DIR__ . '/../src/Cli.php';
 
 runGame(primeGame());
