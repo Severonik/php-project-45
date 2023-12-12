@@ -35,8 +35,13 @@ function progressionGame()
 
             $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
+            $question = '';
+            foreach ($progressionWithDots as $index => $number) {
+                $question .= ($index === $hiddenPosition) ? '.. ' : "$number ";
+            }
+
             return [
-                'question' => implode(' ', $progressionWithDots), // Преобразуем массив в строку
+                'question' => trim($question),
                 'hiddenPosition' => $hiddenPosition,
             ];
         },
@@ -48,4 +53,3 @@ function progressionGame()
         }
     ];
 }
-
