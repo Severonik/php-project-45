@@ -3,7 +3,10 @@
 require_once __DIR__ . '/../src/Cli.php';
 require_once __DIR__ . '/../src/Game.php';
 
-function runGame(callable $game)
+use function cli\line;
+use function cli\prompt;
+
+function runGame(Game $game)
 {
     $name = askName();
     welcome($name);
@@ -12,10 +15,10 @@ function runGame(callable $game)
     $maxCorrectAnswers = 3;
 
     while ($correctAnswersCount < $maxCorrectAnswers) {
-        $question = $game['question']();
-        $correctAnswer = $game['correctAnswer']($question);
+        $question = generateQuestionFunction($game);
+        $correctAnswer = calculateCorrectAnswerFunction($game, $question);
 
-        showGameInstructions($game['type']);
+        showGameInstructions(getTypeFunction($game));
         showQuestion($question);
         $userAnswer = askUserAnswer();
 
