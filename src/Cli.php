@@ -1,7 +1,5 @@
 <?php
 
-namespace PhpProject45\Cli;
-
 use function cli\line;
 use function cli\prompt;
 
