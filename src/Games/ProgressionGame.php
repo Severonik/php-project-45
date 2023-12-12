@@ -30,13 +30,13 @@ function progressionGame()
         'generateQuestion' => function () {
             $progression = generateProgression();
             $hiddenPosition = mt_rand(0, count($progression) - 1);
-            $correctAnswer = $progression[$hiddenPosition];
+            $correctAnswer = (string) $progression[$hiddenPosition];
 
             $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
             return [
                 'question' => implode(' ', $progressionWithDots),
-                'correctAnswer' => (string) $correctAnswer,
+                'correctAnswer' => $correctAnswer,
             ];
         },
         'calculateCorrectAnswer' => function ($questionData) {
