@@ -6,7 +6,7 @@ function evenGame()
         'type' => 'even',
         'generateQuestion' => function () {
             $question = mt_rand(1, 100);
-            return "Question: $question";
+            return $question;
         },
         'calculateCorrectAnswer' => function ($question) {
             $question = (int)$question;
