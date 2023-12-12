@@ -7,8 +7,6 @@ interface Game
     public function calculateCorrectAnswer(string $question);
 }
 
-// Добавим функции для работы с интерфейсом
-
 function getTypeFunction(Game $game)
 {
     return $game->getType();
