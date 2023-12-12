@@ -23,9 +23,11 @@ function replaceWithDots($progression, $position)
 
         return $progressionWithDots;
     }
-
-    $hiddenPosition = mt_rand(0, count($progression) - 1);
+    
+    
     $progression = generateProgression();
+    $hiddenPosition = mt_rand(0, count($progression) - 1);
+    
 
 function progressionGame($hiddenPosition, $progression)
 {
