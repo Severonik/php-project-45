@@ -36,7 +36,7 @@ function progressionGame()
 
             return [
                 'question' => implode(' ', $progressionWithDots),
-                'correctAnswer' => $correctAnswer,
+                'correctAnswer' => (string) $correctAnswer,
             ];
         },
         'calculateCorrectAnswer' => function ($questionData) {
