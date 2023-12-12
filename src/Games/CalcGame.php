@@ -2,27 +2,22 @@
 
 namespace PhpProject45\Games;
 
-use PhpProject45\Game;
+use PhpProject45\Game\Game;
 
-class CalcGame implements Game
+function calcGame(): Game
 {
-    public function getType()
-    {
-        return 'calc';
-    }
+    return [
+        'type' => 'calc',
+        'generateQuestion' => function () {
+            $number1 = mt_rand(1, 100);
+            $number2 = mt_rand(1, 100);
+            $operation = ['+', '-', '*'][array_rand(['+', '-', '*'])];
 
-    public function generateQuestion()
-    {
-        $number1 = mt_rand(1, 100);
-        $number2 = mt_rand(1, 100);
-        $operation = ['+', '-', '*'][array_rand(['+', '-', '*'])];
-
-        return "$number1 $operation $number2";
-    }
-
-    public function calculateCorrectAnswer($question)
-    {
-        eval('$result = ' . $question . ';');
-        return $result;
-    }
+            return "$number1 $operation $number2";
+        },
+        'calculateCorrectAnswer' => function ($question) {
+            eval('$result = ' . $question . ';');
+            return $result;
+        }
+    ];
 }

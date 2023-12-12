@@ -4,6 +4,17 @@ namespace PhpProject45\Games;
 
 use PhpProject45\Game;
 
+function gcd($a, $b)
+{
+    while ($b !== 0) {
+        $remainder = $a % $b;
+        $a = $b;
+        $b = $remainder;
+    }
+
+    return $a;
+}
+
 class GcdGame implements Game
 {
     public function getType()
@@ -22,17 +33,6 @@ class GcdGame implements Game
     public function calculateCorrectAnswer($question)
     {
         list($number1, $number2) = explode(' ', $question);
-        return $this->gcd($number1, $number2);
-    }
-
-    private function gcd($a, $b)
-    {
-        while ($b !== 0) {
-            $remainder = $a % $b;
-            $a = $b;
-            $b = $remainder;
-        }
-
-        return $a;
+        return gcd($number1, $number2);
     }
 }

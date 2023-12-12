@@ -2,56 +2,25 @@
 
 namespace PhpProject45\Games;
 
-use PhpProject45\Game;
+use PhpProject45\Game\Game;
 
-class ProgressionGame implements Game
+function progressionGame(): Game
 {
-    private $progression;
-    private $hiddenPosition;
+    return [
+        'type' => 'progression',
+        'generateQuestion' => function () {
+            $progression = generateProgression();
+            $hiddenPosition = mt_rand(0, count($progression) - 1);
 
-    public function getType()
-    {
-        return 'progression';
-    }
+            $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
-    public function generateQuestion()
-    {
-        $this->progression = $this->generateProgression();
-        $this->hiddenPosition = mt_rand(0, count($this->progression) - 1);
+            return implode(' ', $progressionWithDots);
+        },
+        'calculateCorrectAnswer' => function ($question) {
+            $progression = explode(' ', $question);
+            $hiddenNumber = $progression[$hiddenPosition];
 
-        $progressionWithDots = $this->replaceWithDots($this->progression, $this->hiddenPosition);
-
-        return implode(' ', $progressionWithDots);
-    }
-
-    public function calculateCorrectAnswer($question)
-    {
-        $progression = $this->progression;
-        $hiddenNumber = $progression[$this->hiddenPosition];
-
-        return $hiddenNumber;
-    }
-
-    private function generateProgression()
-    {
-        $length = mt_rand(5, 10);
-        $start = mt_rand(1, 20);
-        $step = mt_rand(1, 5);
-
-        $progression = [$start];
-
-        for ($i = 1; $i < $length; $i++) {
-            $progression[] = $start + $i * $step;
+            return $hiddenNumber;
         }
-
-        return $progression;
-    }
-
-    private function replaceWithDots($progression, $position)
-    {
-        $progressionWithDots = $progression;
-        $progressionWithDots[$position] = '..';
-
-        return $progressionWithDots;
-    }
+    ];
 }

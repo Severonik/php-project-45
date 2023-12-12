@@ -1,38 +1,45 @@
 <?php
 
-namespace PhpProject45;
+namespace PhpProject45\Engine;
 
-use function cli\line;
-use function cli\prompt;
+use function PhpProject45\Cli\askName;
+use function PhpProject45\Cli\welcome;
+use function PhpProject45\Cli\showGameInstructions;
+use function PhpProject45\Cli\showQuestion;
+use function PhpProject45\Cli\askUserAnswer;
+use function PhpProject45\Cli\showCorrectAnswer;
+use function PhpProject45\Cli\showWrongAnswer;
+use function PhpProject45\Cli\showTryAgain;
+use function PhpProject45\Cli\showCongratulations;
 
-class Engine
+use function PhpProject45\Games\generateQuestion;
+use function PhpProject45\Games\calculateCorrectAnswer;
+
+function runGame(callable $game)
 {
-    public static function runGame(Game $game)
-    {
-        $name = Cli::askName();
-        Cli::welcome($name);
+    $name = askName();
+    welcome($name);
 
-        $correctAnswersCount = 0;
-        $maxCorrectAnswers = 3;
+    $correctAnswersCount = 0;
+    $maxCorrectAnswers = 3;
 
-        while ($correctAnswersCount < $maxCorrectAnswers) {
-            $question = $game->generateQuestion();
-            $correctAnswer = $game->calculateCorrectAnswer($question);
+    while ($correctAnswersCount < $maxCorrectAnswers) {
+        $question = generateQuestion($game);
+        $correctAnswer = calculateCorrectAnswer($game, $question);
 
-            Cli::showGameInstructions($game->getType());
-            Cli::showQuestion($question);
-            $userAnswer = Cli::askUserAnswer();
+        showGameInstructions($game);
+        showQuestion($question);
+        $userAnswer = askUserAnswer();
 
-            if ($userAnswer == $correctAnswer) {
-                Cli::showCorrectAnswer();
-                $correctAnswersCount++;
-            } else {
-                Cli::showWrongAnswer($userAnswer, $correctAnswer);
-                Cli::showTryAgain($name);
-                return;
-            }
+        if ($userAnswer == $correctAnswer) {
+            showCorrectAnswer();
+            $correctAnswersCount++;
+        } else {
+            showWrongAnswer($userAnswer, $correctAnswer);
+            showTryAgain($name);
+            return;
         }
-
-        Cli::showCongratulations($name);
     }
+
+    showCongratulations($name);
 }

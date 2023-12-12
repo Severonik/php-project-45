@@ -3,10 +3,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use PhpProject45\Engine;
-use PhpProject45\Games\PrimeGame;
+use function PhpProject45\Engine\runGame;
+use function PhpProject45\Games\primeGame;
 
-$engine = new Engine();
-$game = new PrimeGame();
-
-$engine->runGame($game);
+runGame(primeGame());

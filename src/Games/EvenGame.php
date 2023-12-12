@@ -2,22 +2,17 @@
 
 namespace PhpProject45\Games;
 
-use PhpProject45\Game;
+use PhpProject45\Game\Game;
 
-class EvenGame implements Game
+function evenGame(): Game
 {
-    public function getType()
-    {
-        return 'even';
-    }
-
-    public function generateQuestion()
-    {
-        return mt_rand(1, 100);
-    }
-
-    public function calculateCorrectAnswer($question)
-    {
-        return $question % 2 === 0 ? 'yes' : 'no';
-    }
+    return [
+        'type' => 'even',
+        'generateQuestion' => function () {
+            return mt_rand(1, 100);
+        },
+        'calculateCorrectAnswer' => function ($question) {
+            return $question % 2 === 0 ? 'yes' : 'no';
+        }
+    ];
 }
