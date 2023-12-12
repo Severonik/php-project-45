@@ -1,5 +1,21 @@
 <?php
 
+
+function generateProgression()
+{
+    $length = mt_rand(5, 10);
+    $start = mt_rand(1, 20);
+    $step = mt_rand(1, 5);
+
+    $progression = [$start];
+
+    for ($i = 1; $i < $length; $i++) {
+        $progression[] = $start + $i * $step;
+    }
+
+    return $progression;
+}
+
 function progressionGame()
 {
     return [
