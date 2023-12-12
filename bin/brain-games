@@ -3,6 +3,6 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function PhpProject45\Cli\welcomeUser;
+use PhpProject45\Cli;
 
 welcomeUser();
