@@ -23,27 +23,28 @@ function replaceWithDots($progression, $position)
 
         return $progressionWithDots;
     }
-    
-    
-    $progression = generateProgression();
-    $hiddenPosition = mt_rand(0, count($progression) - 1);
-    
 
-function progressionGame($hiddenPosition, $progression)
+function progressionGame()
 {
     return [
         'type' => 'progression',
         'generateQuestion' => function () {
+            $progression = generateProgression();
+            $hiddenPosition = mt_rand(0, count($progression) - 1);
 
             $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
-            return implode(' ', $progressionWithDots);
+            return [
+                'question' => implode(' ', $progressionWithDots),
+                'hiddenPosition' => $hiddenPosition,
+            ];
         },
-        'calculateCorrectAnswer' => function ($question) {
-            $progression = explode(' ', $question);
-            $hiddenNumber = $progression[$hiddenPosition];
+        'calculateCorrectAnswer' => function ($questionData, $hiddenPosition) {
+            $progression = explode(' ', $questionData['question']);
+            $hiddenNumber = $progression[$questionData['hiddenPosition']];
 
             return $hiddenNumber;
         }
     ];
 }
+
