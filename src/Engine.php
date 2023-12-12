@@ -1,8 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../src/Cli.php';
-use function PhpProject45\Games\generateQuestion;
-use function PhpProject45\Games\calculateCorrectAnswer;
 
 function runGame(callable $game)
 {
@@ -13,10 +11,10 @@ function runGame(callable $game)
     $maxCorrectAnswers = 3;
 
     while ($correctAnswersCount < $maxCorrectAnswers) {
-        $question = generateQuestion($game);
-        $correctAnswer = calculateCorrectAnswer($game, $question);
+        $question = $game['question']();
+        $correctAnswer = $game['correctAnswer']($question);
 
-        showGameInstructions($game);
+        showGameInstructions($game['type']);
         showQuestion($question);
         $userAnswer = askUserAnswer();
 
