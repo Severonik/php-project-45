@@ -24,14 +24,14 @@ function replaceWithDots($progression, $position)
         return $progressionWithDots;
     }
 
-function progressionGame()
+    $hiddenPosition = mt_rand(0, count($progression) - 1);
+
+function progressionGame($hiddenPosition)
 {
-    global $hiddenPosition;
     return [
         'type' => 'progression',
         'generateQuestion' => function () {
             $progression = generateProgression();
-            $hiddenPosition = mt_rand(0, count($progression) - 1);
 
             $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
