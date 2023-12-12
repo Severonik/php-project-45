@@ -36,7 +36,7 @@ function progressionGame()
             $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
             return [
-                'question' => $progressionWithDots,
+                'question' => implode(' ', $progressionWithDots), // Преобразуем массив в строку
                 'hiddenPosition' => $hiddenPosition,
             ];
         },
@@ -48,3 +48,4 @@ function progressionGame()
         }
     ];
 }
+
