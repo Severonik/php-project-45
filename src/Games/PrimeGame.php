@@ -1,8 +1,6 @@
 <?php
 
-use PhpProject45\Game\Game;
-
-function primeGame(): Game
+function primeGame()
 {
     return [
         'type' => 'prime',

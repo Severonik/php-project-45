@@ -1,8 +1,6 @@
 <?php
 
-use PhpProject45\Game\Game;
-
-function progressionGame(): Game
+function progressionGame()
 {
     return [
         'type' => 'progression',

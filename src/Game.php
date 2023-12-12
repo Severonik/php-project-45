@@ -1,8 +1,6 @@
 <?php
 
-use PhpProject45\Game\Game;
-
-function calcGame(): Game
+function calcGame()
 {
     return [
         'type' => 'calc',
@@ -20,7 +18,7 @@ function calcGame(): Game
     ];
 }
 
-function evenGame(): Game
+function evenGame()
 {
     return [
         'type' => 'even',
@@ -33,7 +31,7 @@ function evenGame(): Game
     ];
 }
 
-function primeGame(): Game
+function primeGame()
 {
     return [
         'type' => 'prime',
@@ -46,7 +44,7 @@ function primeGame(): Game
     ];
 }
 
-function progressionGame(): Game
+function progressionGame()
 {
     return [
         'type' => 'progression',

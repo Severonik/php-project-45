@@ -1,8 +1,6 @@
 <?php
 
-use PhpProject45\Game\Game;
-
-function evenGame(): Game
+function evenGame()
 {
     return [
         'type' => 'even',

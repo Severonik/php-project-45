@@ -1,8 +1,6 @@
 <?php
 
-use PhpProject45\Game\Game;
-
-function calcGame(): Game
+function calcGame()
 {
     return [
         'type' => 'calc',
