@@ -33,11 +33,14 @@ function progressionGame()
 
             $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
-            return implode(' ', $progressionWithDots);
+            return [
+                'question' => implode(' ', $progressionWithDots),
+                'hiddenPosition' => $hiddenPosition,
+            ];
         },
-        'calculateCorrectAnswer' => function ($question) {
-            $progression = explode(' ', $question);
-            $hiddenNumber = $progression[$hiddenPosition];
+        'calculateCorrectAnswer' => function ($questionData) {
+            $progression = explode(' ', $questionData['question']);
+            $hiddenNumber = $progression[$questionData['hiddenPosition']];
 
             return $hiddenNumber;
         }
