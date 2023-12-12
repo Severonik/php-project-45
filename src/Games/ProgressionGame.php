@@ -30,19 +30,17 @@ function progressionGame()
         'generateQuestion' => function () {
             $progression = generateProgression();
             $hiddenPosition = mt_rand(0, count($progression) - 1);
+            $correctAnswer = $progression[$hiddenPosition];
 
             $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
             return [
                 'question' => implode(' ', $progressionWithDots),
-                'hiddenPosition' => $hiddenPosition,
+                'correctAnswer' => $correctAnswer,
             ];
         },
         'calculateCorrectAnswer' => function ($questionData) {
-            $progression = explode(' ', $questionData['question']);
-            $hiddenNumber = $progression[$questionData['hiddenPosition']];
-
-            return $hiddenNumber;
+            return $questionData['correctAnswer'];
         }
     ];
 }
