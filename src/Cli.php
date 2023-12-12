@@ -21,6 +21,7 @@ function askName()
 
 function welcome(string $name)
 {
+    $name = askName();
     line("Hello, $name!");
 }
 

@@ -3,6 +3,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function PhpProject45\Cli\welcomeUser;
+use function PhpProject45\Engine\runGame;
+use function PhpProject45\Games\gcdGame;
 
-welcomeUser();
+runGame(gcdGame());
