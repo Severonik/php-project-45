@@ -1,6 +1,5 @@
 <?php
 
-
 function generateProgression()
 {
     $length = mt_rand(5, 10);
@@ -17,20 +16,21 @@ function generateProgression()
 }
 
 function replaceWithDots($progression, $position)
-    {
-        $progressionWithDots = $progression;
-        $progressionWithDots[$position] = '..';
+{
+    $progressionWithDots = $progression;
+    $progressionWithDots[$position] = '..';
 
-        return $progressionWithDots;
-    }
+    return $progressionWithDots;
+}
 
 function progressionGame()
 {
+    $hiddenPosition = mt_rand(0, $length - 1); // Добавлено определение $hiddenPosition
+
     return [
         'type' => 'progression',
-        'generateQuestion' => function () {
+        'generateQuestion' => function () use ($hiddenPosition) { // Использование $hiddenPosition
             $progression = generateProgression();
-            $hiddenPosition = mt_rand(0, count($progression) - 1);
 
             $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
@@ -39,7 +39,7 @@ function progressionGame()
                 'hiddenPosition' => $hiddenPosition,
             ];
         },
-        'calculateCorrectAnswer' => function ($questionData, $hiddenPosition) {
+        'calculateCorrectAnswer' => function ($questionData) {
             $progression = explode(' ', $questionData['question']);
             $hiddenNumber = $progression[$questionData['hiddenPosition']];
 
@@ -47,4 +47,3 @@ function progressionGame()
         }
     ];
 }
-
