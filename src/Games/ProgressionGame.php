@@ -42,7 +42,7 @@ function progressionGame()
             $progression = explode(' ', $questionData['question']);
             $hiddenNumber = $progression[$questionData['hiddenPosition']];
 
-            return (string)$hiddenNumber;
+            return strval($hiddenNumber);
         }
     ];
 }
