@@ -9,13 +9,7 @@ function generateProgression()
     $progression = [$start];
 
     for ($i = 1; $i < $length; $i++) {
-        // Добавляем дополнительные проверки
-        do {
-            $step = mt_rand(1, 5);
-        } while ($step === 0);
-
-        $nextNumber = $progression[$i - 1] + $step;
-        $progression[] = $nextNumber;
+        $progression[] = $start + $i * $step;
     }
 
     return $progression;
@@ -36,13 +30,13 @@ function progressionGame()
         'generateQuestion' => function () {
             $progression = generateProgression();
             $hiddenPosition = mt_rand(0, count($progression) - 1);
+            $hiddenNumber = $progression[$hiddenPosition];
 
             $progressionWithDots = replaceWithDots($progression, $hiddenPosition);
 
             return [
                 'question' => implode(' ', $progressionWithDots),
-                'hiddenPosition' => $hiddenPosition,
-                'hiddenNumber' => $progression[$hiddenPosition],
+                'hiddenNumber' => $hiddenNumber,
             ];
         },
         'calculateCorrectAnswer' => function ($questionData) {
