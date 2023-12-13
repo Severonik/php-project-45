@@ -15,26 +15,21 @@ function generateProgression()
     return $progression;
 }
 
-function replaceWithDots(array $progression, int $position)
+function replaceWithDots($progression, $position)
 {
     $progressionWithDots = $progression;
-    if (isset($progressionWithDots[$position])) {
-        $progressionWithDots[$position] = '..';
-    } else {
-        // Обработка ситуации, когда указанная позиция отсутствует в массиве
-    }
+    $progressionWithDots[$position] = '..';
 
     return $progressionWithDots;
 }
 
 function progressionGame()
 {
-    $progression = [];
-    $hiddenPosition = 0;
-
     return [
         'type' => 'progression',
-        'generateQuestion' => function () use (&$progression, &$hiddenPosition) {
+        'generateQuestion' => function () {
+            global $progression, $hiddenPosition;
+
             $progression = generateProgression();
             $hiddenPosition = mt_rand(0, count($progression) - 1);
 
@@ -42,13 +37,12 @@ function progressionGame()
 
             return implode(' ', $progressionWithDots);
         },
-        'calculateCorrectAnswer' => function ($question) use ($progression, $hiddenPosition) {
-            if (isset($progression[$hiddenPosition])) {
-                $hiddenNumber = $progression[$hiddenPosition];
-                return strval($hiddenNumber);
-            } else {
-                // Обработка ситуации, когда скрытое число по указанной позиции отсутствует
-            }
+        'calculateCorrectAnswer' => function ($question) {
+            global $progression, $hiddenPosition;
+
+            $hiddenNumber = $progression[$hiddenPosition];
+
+            return $hiddenNumber;
         }
     ];
 }
