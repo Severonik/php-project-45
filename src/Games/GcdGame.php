@@ -16,8 +16,8 @@ function gcdGame()
     return [
         'type' => 'gcd',
         'generateQuestion' => function () {
-            $number1 = mt_rand(1, 100);
-            $number2 = mt_rand(1, 100);
+            $number1 = intval(mt_rand(1, 100));
+            $number2 = intval(mt_rand(1, 100));
 
             return "$number1 $number2";
         },
