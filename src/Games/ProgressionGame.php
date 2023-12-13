@@ -44,6 +44,9 @@ function progressionGame()
         },
         'askUserAnswer' => function () {
             return readline("Your answer: ");
-        }
+        },
+        'formatCorrectAnswer' => function ($correctAnswer) {
+            return '..';
+        },
     ];
 }
