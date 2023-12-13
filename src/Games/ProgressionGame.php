@@ -9,7 +9,13 @@ function generateProgression()
     $progression = [$start];
 
     for ($i = 1; $i < $length; $i++) {
-        $progression[] = $start + $i * $step;
+        // Добавляем дополнительные проверки
+        do {
+            $step = mt_rand(1, 5);
+        } while ($step === 0);
+
+        $nextNumber = $progression[$i - 1] + $step;
+        $progression[] = $nextNumber;
     }
 
     return $progression;
