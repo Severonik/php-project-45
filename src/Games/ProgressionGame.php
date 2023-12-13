@@ -41,7 +41,7 @@ function progressionGame()
         'calculateCorrectAnswer' => function ($question) use ($progression, $hiddenPosition) {
             $hiddenNumber = $progression[$hiddenPosition];
 
-            return strval($hiddenNumber);
+            return $hiddenNumber;
         }
     ];
 }
