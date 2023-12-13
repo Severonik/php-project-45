@@ -45,7 +45,7 @@ function showGameInstructions(string $gameType = '')
 
 function showQuestion(string $question)
 {
-    if (is_array($question)) {
+    if (strpos($question, ' ') !== false) {
         $questionText = implode(' ', $question);
     } else {
         $questionText = $question;
