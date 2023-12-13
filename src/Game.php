@@ -12,5 +12,5 @@ function generateQuestionFunction(array $game): string
 
 function calculateCorrectAnswerFunction(array $game, string $question)
 {
-    return $game['calculateCorrectAnswer']($game, $question);
+    return $game['calculateCorrectAnswer']($question);
 }
