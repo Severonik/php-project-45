@@ -10,7 +10,7 @@ function generateQuestionFunction(array  $game): string
     return $game['generateQuestion']();
 }
 
-function calculateCorrectAnswerFunction(string $game, string $question)
+function calculateCorrectAnswerFunction(array $game, string $question)
 {
     return $game['calculateCorrectAnswer']($question);
 }
