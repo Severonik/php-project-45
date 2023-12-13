@@ -15,7 +15,7 @@ function generateProgression()
     return $progression;
 }
 
-function replaceWithDots($progression, $position)
+function replaceWithDots(array $progression, int $position): array
 {
     $progressionWithDots = $progression;
     $progressionWithDots[$position] = '..';
@@ -23,11 +23,11 @@ function replaceWithDots($progression, $position)
     return $progressionWithDots;
 }
 
-function progressionGame()
+function progressionGame(): array
 {
     return [
         'type' => 'progression',
-        'generateQuestion' => function () {
+        'generateQuestion' => function (): string {
             global $progression, $hiddenPosition;
 
             $progression = generateProgression();
@@ -37,7 +37,7 @@ function progressionGame()
 
             return implode(' ', $progressionWithDots);
         },
-        'calculateCorrectAnswer' => function ($question) {
+        'calculateCorrectAnswer' => function ($question): int {
             global $progression, $hiddenPosition;
 
             $hiddenNumber = $progression[$hiddenPosition];
