@@ -1,11 +1,11 @@
 <?php
 
-function getTypeFunction(array  $game): string
+function getTypeFunction(array $game): string
 {
     return $game['type'];
 }
 
-function generateQuestionFunction(array  $game): string
+function generateQuestionFunction(array $game): string
 {
     return $game['generateQuestion']();
 }
