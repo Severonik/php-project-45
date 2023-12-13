@@ -15,7 +15,7 @@ function runGame(array $game)
     $maxCorrectAnswers = 3;
 
     while ($correctAnswersCount < $maxCorrectAnswers) {
-        $question = generateQuestionFunction($game);
+        $question = generateQuestionFunction(getTypeFunction($game));
         $correctAnswer = calculateCorrectAnswerFunction($game, $question);
 
         showGameInstructions(getTypeFunction($game));
