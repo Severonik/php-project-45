@@ -22,7 +22,7 @@ function welcome(string $name)
     line("Hello, $name!");
 }
 
-function showGameInstructions($gameType = '')
+function showGameInstructions(string $gameType = '')
 {
     switch ($gameType) {
         case 'even':
@@ -43,7 +43,7 @@ function showGameInstructions($gameType = '')
     }
 }
 
-function showQuestion($question)
+function showQuestion(string $question)
 {
     $questionText = is_array($question) ? implode(' ', $question) : $question;
     line("Question: {$questionText}");

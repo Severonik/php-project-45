@@ -12,6 +12,7 @@ function calcGame()
             return "$number1 $operation $number2";
         },
         'calculateCorrectAnswer' => function ($question) {
+            $result = 0;
             eval('$result = ' . $question . ';');
             return $result;
         }

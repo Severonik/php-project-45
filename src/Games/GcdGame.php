@@ -1,6 +1,6 @@
 <?php
 
-function gcd($a, $b)
+function gcd(int $a, int $b)
 {
     while ($b !== 0) {
         $remainder = $a % $b;

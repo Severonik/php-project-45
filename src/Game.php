@@ -1,16 +1,16 @@
 <?php
 
-function getTypeFunction($game)
+function getTypeFunction(string $game)
 {
     return $game['type'];
 }
 
-function generateQuestionFunction($game)
+function generateQuestionFunction(string $game)
 {
     return $game['generateQuestion']();
 }
 
-function calculateCorrectAnswerFunction($game, $question)
+function calculateCorrectAnswerFunction(string $game, string $question)
 {
     return $game['calculateCorrectAnswer']($question);
 }

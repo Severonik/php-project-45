@@ -1,6 +1,6 @@
 <?php
 
-function isPrime($number)
+function isPrime(int $number)
 {
     if ($number < 2) {
         return false;

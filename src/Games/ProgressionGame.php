@@ -15,7 +15,7 @@ function generateProgression()
     return $progression;
 }
 
-function replaceWithDots($progression, $position)
+function replaceWithDots(string $progression, int $position)
 {
     $progressionWithDots = $progression;
     $progressionWithDots[$position] = '..';
