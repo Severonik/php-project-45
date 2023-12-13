@@ -2,16 +2,14 @@
 
 function progressionGame()
 {
-    return new class implements Game {
-        private $progression;
-        private $hiddenPosition;
 
-        public function getType()
+
+        function getType()
         {
             return 'progression';
         }
 
-        public function generateQuestion()
+        function generateQuestion()
         {
             $this->progression = generateProgression();
             $this->hiddenPosition = mt_rand(0, count($this->progression) - 1);
@@ -21,7 +19,7 @@ function progressionGame()
             return implode(' ', $progressionWithDots);
         }
 
-        public function calculateCorrectAnswer($question)
+        function calculateCorrectAnswer($question)
         {
             $progression = $this->progression;
             $hiddenNumber = $progression[$this->hiddenPosition];
@@ -29,7 +27,7 @@ function progressionGame()
             return $hiddenNumber;
         }
 
-        private function generateProgression()
+        function generateProgression()
         {
             $length = mt_rand(5, 10);
             $start = mt_rand(1, 20);
@@ -44,12 +42,11 @@ function progressionGame()
             return $progression;
         }
 
-        private function replaceWithDots($progression, $position)
+        function replaceWithDots($progression, $position)
         {
             $progressionWithDots = $progression;
             $progressionWithDots[$position] = '..';
 
             return $progressionWithDots;
         }
-    };
 }
