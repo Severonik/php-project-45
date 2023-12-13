@@ -15,7 +15,7 @@ function generateProgression()
     return $progression;
 }
 
-function replaceWithDots(string $progression, int $position)
+function replaceWithDots(array $progression, int $position)
 {
     $progressionWithDots = $progression;
     $progressionWithDots[$position] = '..';
@@ -25,11 +25,12 @@ function replaceWithDots(string $progression, int $position)
 
 function progressionGame()
 {
+    $progression = [];
+    $hiddenPosition = 0;
+
     return [
         'type' => 'progression',
-        'generateQuestion' => function () {
-            global $progression, $hiddenPosition;
-
+        'generateQuestion' => function () use (&$progression, &$hiddenPosition) {
             $progression = generateProgression();
             $hiddenPosition = mt_rand(0, count($progression) - 1);
 
@@ -37,12 +38,10 @@ function progressionGame()
 
             return implode(' ', $progressionWithDots);
         },
-        'calculateCorrectAnswer' => function ($question) {
-            global $progression, $hiddenPosition;
-
+        'calculateCorrectAnswer' => function ($question) use ($progression, $hiddenPosition) {
             $hiddenNumber = $progression[$hiddenPosition];
 
-            return $hiddenNumber;
+            return strval($hiddenNumber);
         }
     ];
 }
