@@ -18,7 +18,11 @@ function generateProgression()
 function replaceWithDots(array $progression, int $position)
 {
     $progressionWithDots = $progression;
-    $progressionWithDots[$position] = '..';
+    if (isset($progressionWithDots[$position])) {
+        $progressionWithDots[$position] = '..';
+    } else {
+        // Обработка ситуации, когда указанная позиция отсутствует в массиве
+    }
 
     return $progressionWithDots;
 }
@@ -39,9 +43,12 @@ function progressionGame()
             return implode(' ', $progressionWithDots);
         },
         'calculateCorrectAnswer' => function ($question) use ($progression, $hiddenPosition) {
-            $hiddenNumber = $progression[$hiddenPosition];
-
-            return $hiddenNumber;
+            if (isset($progression[$hiddenPosition])) {
+                $hiddenNumber = $progression[$hiddenPosition];
+                return strval($hiddenNumber);
+            } else {
+                // Обработка ситуации, когда скрытое число по указанной позиции отсутствует
+            }
         }
     ];
 }
