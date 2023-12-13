@@ -44,6 +44,13 @@ function progressionGame()
         },
         'askUserAnswer' => function () {
             return readline("Your answer: ");
-        }
+        },
+        'showWrongAnswer' => function ($userAnswer, $correctAnswer) {
+            echo "'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.\n";
+        },
+        'showCorrectAnswer' => function () {
+            echo "Correct!\n";
+        },
     ];
 }
+
