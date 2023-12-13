@@ -41,6 +41,9 @@ function progressionGame()
         },
         'calculateCorrectAnswer' => function ($questionData) {
             return strval($questionData['hiddenNumber']);
+        },
+        'askUserAnswer' => function () {
+            return readline("Your answer: ");
         }
     ];
 }
