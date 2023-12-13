@@ -43,9 +43,9 @@ function showGameInstructions(string $gameType = '')
     }
 }
 
-function showQuestion($question)
+function showQuestion(string $question)
 {
-    if (is_array($question) && !empty($question)) {
+    if (is_array($question) && count($question) > 0) {
         $questionText = implode(' ', $question);
     } else {
         $questionText = $question;
