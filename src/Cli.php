@@ -45,7 +45,7 @@ function showGameInstructions(string $gameType = '')
 
 function showQuestion(string $question)
 {
-    line("Question: {$questionText}");
+    line("Question: {$question}");
 }
 
 function askUserAnswer()
