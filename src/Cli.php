@@ -45,12 +45,6 @@ function showGameInstructions(string $gameType = '')
 
 function showQuestion(string $question)
 {
-    if (count($question) > 0) {
-        $questionText = implode(' ', $question);
-    } else {
-        $questionText = $question;
-    }
-
     line("Question: {$questionText}");
 }
 
