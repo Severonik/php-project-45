@@ -79,9 +79,9 @@ function runGame(array $game)
     welcome($name);
 
     $correctAnswersCount = 0;
-    $maxCorrectAnswers = 3;
+    const MAX_CORRECT_ANSWERS = 3;
 
-    while ($correctAnswersCount < $maxCorrectAnswers) {
+    while ($correctAnswersCount < MAX_CORRECT_ANSWERS) {
         $question = generateQuestionFunction($game);
         $correctAnswer = calculateCorrectAnswerFunction($game, $question);
 
