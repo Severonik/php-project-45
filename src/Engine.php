@@ -3,14 +3,6 @@
 
 require_once __DIR__ . '/../src/Game.php';
 
-function welcomeUser()
-{
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, $name!");
-    exit();
-}
-
 function askName()
 {
     line('Welcome to the Brain Games!');
