@@ -14,9 +14,15 @@
         "squizlabs/php_codesniffer": "^3.6"
     },
     "autoload": {
-        "psr-4": {
-            "PhpProject45\\": "src/"
-        }
+        "files": [
+            "/src/Cli.php",
+            "/src/Engine.php",
+            "/src/Games/CalcGame.php",
+            "/src/Games/EvenGame.php",
+            "/src/Games/GcdGame.php",
+            "/src/Games/PrimeGame.php",
+            "/src/Games/ProgressionGame.php"
+        ]
     },
     "bin": [
         "bin/brain-games",
