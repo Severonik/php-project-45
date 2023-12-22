@@ -2,15 +2,19 @@
 
 function getTypeFunction(array $game): string
 {
-    return $game['type'];
+    return $game['type'] ?? 'unknown';
 }
 
 function generateQuestionFunction(array $game): string
 {
-    return $game['generateQuestion']();
+    return isset($game['generateQuestion']) && is_callable($game['generateQuestion'])
+        ? $game['generateQuestion']()
+        : 'No valid question generator';
 }
 
 function calculateCorrectAnswerFunction(array $game, string $question)
 {
-    return $game['calculateCorrectAnswer']($question);
+    return isset($game['calculateCorrectAnswer']) && is_callable($game['calculateCorrectAnswer'])
+        ? $game['calculateCorrectAnswer']($question)
+        : null;
 }
