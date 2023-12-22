@@ -3,6 +3,8 @@
 use function cli\line;
 use function cli\prompt;
 
+const MAX_CORRECT_ANSWERS = 3;
+
 function welcomeUser()
 {
     line('Welcome to the Brain Games!');
@@ -79,7 +81,6 @@ function runGame(array $game)
     welcome($name);
 
     $correctAnswersCount = 0;
-    const MAX_CORRECT_ANSWERS = 3;
 
     while ($correctAnswersCount < MAX_CORRECT_ANSWERS) {
         $question = generateQuestionFunction($game);
