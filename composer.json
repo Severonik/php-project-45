@@ -17,7 +17,6 @@
         "files": [
             "/src/Cli.php",
             "/src/Engine.php",
-            "/src/Game.php",
             "/src/Games/CalcGame.php",
             "/src/Games/EvenGame.php",
             "/src/Games/GcdGame.php",
