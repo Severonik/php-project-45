@@ -18,7 +18,7 @@ function isPrime(int $number)
 function primeGame()
 {
     return [
-        'type' => 'prime',
+        'question' => 'Answer "yes" if given number is prime. Otherwise answer "no".',
         'generateQuestion' => function () {
             return mt_rand(1, 100);
         },

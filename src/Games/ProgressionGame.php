@@ -26,7 +26,7 @@ function replaceWithDots(array $progression, int $position): array
 function progressionGame(): array
 {
     return [
-        'type' => 'progression',
+        'question' => 'What number is missing in the progression?',
         'generateQuestion' => function (): string {
             global $progression, $hiddenPosition;
 

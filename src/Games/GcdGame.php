@@ -14,7 +14,7 @@ function gcd(int $a, int $b)
 function gcdGame()
 {
     return [
-        'type' => 'gcd',
+        'question' => 'Find the greatest common divisor of given numbers.',
         'generateQuestion' => function () {
             $number1 = intval(mt_rand(1, 100));
             $number2 = intval(mt_rand(1, 100));

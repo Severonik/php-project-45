@@ -3,7 +3,7 @@
 function calcGame()
 {
     return [
-        'type' => 'calc',
+        'question' => 'What is the result of the expression?',
         'generateQuestion' => function () {
             $number1 = mt_rand(1, 100);
             $number2 = mt_rand(1, 100);

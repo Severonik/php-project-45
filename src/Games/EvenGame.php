@@ -3,7 +3,7 @@
 function evenGame()
 {
     return [
-        'type' => 'even',
+        'question' => 'Answer "yes" if the number is even, otherwise answer "no".',
         'generateQuestion' => function () {
             $question = mt_rand(1, 100);
             return $question;
