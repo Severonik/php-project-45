@@ -35,10 +35,10 @@ function runGame(array $game)
     $correctAnswersCount = 0;
 
     while ($correctAnswersCount < MAX_CORRECT_ANSWERS) {
-        $question = generateQuestionFunction($game);
-        $correctAnswer = calculateCorrectAnswerFunction($game, $question);
+        $question = $game['generateQuestion']();
+        $correctAnswer = $game['calculateCorrectAnswer']($question);
 
-        showGameInstructions(getTypeFunction($game));
+        showGameInstructions($game['type']);
         line("Question: {$question}");
         $userAnswer = prompt('Your answer');
 
