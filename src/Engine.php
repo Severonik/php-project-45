@@ -17,7 +17,7 @@ function runGame(array $game)
         $question = $game['generateQuestion']();
         $correctAnswer = $game['calculateCorrectAnswer']($question);
 
-        $game['question']();
+        echo $game['question'];
         line("Question: {$question}");
         $userAnswer = prompt('Your answer');
 
