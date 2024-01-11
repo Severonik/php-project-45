@@ -5,25 +5,6 @@ use function cli\prompt;
 
 const MAX_CORRECT_ANSWERS = 3;
 
-function welcomeUser()
-{
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, $name!");
-    exit();
-}
-
-function askName()
-{
-    line('Welcome to the Brain Games!');
-    return prompt('May I have your name?');
-}
-
-function welcome(string $name)
-{
-    line("Hello, $name!");
-}
-
 function showGameInstructions(string $gameType = '')
 {
     switch ($gameType) {
@@ -45,40 +26,11 @@ function showGameInstructions(string $gameType = '')
     }
 }
 
-function showQuestion(string $question)
-{
-    line("Question: {$question}");
-}
-
-function askUserAnswer()
-{
-    return prompt('Your answer');
-}
-
-function showCorrectAnswer()
-{
-    line('Correct!');
-}
-
-function showWrongAnswer(string $userAnswer, string $correctAnswer)
-{
-    line("'$userAnswer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
-}
-
-function showTryAgain(string $name)
-{
-    line("Let's try again, $name!");
-}
-
-function showCongratulations(string $name)
-{
-    line("Congratulations, $name!");
-}
-
 function runGame(array $game)
 {
-    $name = askName();
-    welcome($name);
+    line('Welcome to the Brain Games!');
+    $name = prompt('May I have your name?');
+    line("Hello, $name!");
 
     $correctAnswersCount = 0;
 
@@ -87,18 +39,18 @@ function runGame(array $game)
         $correctAnswer = calculateCorrectAnswerFunction($game, $question);
 
         showGameInstructions(getTypeFunction($game));
-        showQuestion($question);
-        $userAnswer = askUserAnswer();
+        line("Question: {$question}");
+        $userAnswer = prompt('Your answer');
 
         if ($userAnswer == $correctAnswer) {
-            showCorrectAnswer();
+            line('Correct!');
             $correctAnswersCount++;
         } else {
-            showWrongAnswer($userAnswer, $correctAnswer);
-            showTryAgain($name);
+            line("'$userAnswer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
+            line("Let's try again, $name!");
             return;
         }
     }
 
-    showCongratulations($name);
+    line("Congratulations, $name!");
 }
